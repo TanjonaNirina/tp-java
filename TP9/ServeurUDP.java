@@ -12,6 +12,7 @@ public class ServeurUDP
 			DatagramPacket packet = new DatagramPacket(new byte[1024], 1024);
 			sock.receive(packet);
 			String str = new String(packet.getData());
+			sock.send(packet);
 			System.out.println("str=" + str);
 		}
 	}

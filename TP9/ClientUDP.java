@@ -14,6 +14,12 @@ public class ClientUDP
 		DatagramPacket packet = new DatagramPacket(data, data.length, addr, 1234);
 		DatagramSocket sock = new DatagramSocket();
 		sock.send(packet);
+
+		
+
+		sock.receive(packet);
+		String p = new String(packet.getData());
+		System.out.println(p);
 		sock.close();
 	}
 }
